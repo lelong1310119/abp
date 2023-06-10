@@ -1,0 +1,29 @@
+{
+  "culture": "en",
+  "texts": {
+    "Menu:Home": "Home",
+    "Welcome": "Welcome",
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
+    "Todo:00001": "There is already an province with the same name: {name}",
+    "Todo:00002": "There is already an province with the same code: {code}",
+    "Todo:00003": "There is already an province with the same area code {areaCode}",
+    "Todo:00004": "There is already an district in province with the same name: {name}",
+    "Todo:00005": "There is already an district with the same code: {code}",
+    "Todo:00006": "There is already an commune in district with the same name: {name}",
+    "Todo:00007": "There is already an commune with the same code: {code}",
+    "Actions": "Actions",
+    "Close": "Close",
+    "Delete": "Delete",
+    "Edit": "Edit",
+    "NewProvince": "New province",
+    "AreYouSure": "Are you sure?",
+    "AreYouSureToDelete": "Are you sure you want to delete this item?",
+    "ProvinceDeletionConfirmationMessage": "Are you sure to delete the province '{0}'?",
+    "SuccessfullyDeleted": "Successfully deleted!",
+    "Permission:Todo": "Todo",
+    "Permission:Provinces": "Province Management",
+    "Permission:Provinces.Create": "Creating new provinces",
+    "Permission:Provinces.Edit": "Editing the provinces",
+    "Permission:Provinces.Delete": "Deleting the provinces"
+  }
+}

@@ -1,0 +1,47 @@
+﻿@page
+@using Todo.Localization
+@using Todo.Web.Pages.Districts
+@using Microsoft.Extensions.Localization
+@using Todo.Permissions
+@using Microsoft.AspNetCore.Authorization
+@model IndexModel
+@inject IStringLocalizer<TodoResource> L
+@inject IAuthorizationService AuthorizationService
+@section scripts
+    {
+    <abp-script src="/Pages/Districts/Index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Districts"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end" style="display: flex; justify-content: flex-end" >
+                @*<a href="/Districts/DeletedModal" class="btn btn-primary" style="margin-left: 5px;">Deleted</a>*@
+                <form id="import-form" method="post" asp-page-handler="ExportCSV">
+                    <abp-button id="ExportButton" text="Export CSV" icon="file-export" button-type="Success" type="submit" style="margin-left: 5px;" />
+                </form>
+                <form id="import-form" method="post" asp-page-handler="ExportExcel">
+                    <abp-button id="ExportButton" text="Export Excel" icon="file-export" button-type="Success" type="submit" style="margin-left: 5px;" />
+                </form>
+                @if (await AuthorizationService.IsGrantedAsync(TodoPermissions.Districts.Create))
+                {
+                    <abp-button id="NewDistrictButton"
+                            text="@L["NewDistrict"].Value"
+                            icon="plus"
+                            button-type="Primary" 
+                            style="margin-left: 5px;" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="DistrictsTable"></abp-table>
+    </abp-card-body>
+    <abp-row>
+        <abp-column class="text-end" style="display: flex; justify-content: flex-end">
+            <a href="/Districts/DeletedModal" class="btn btn-danger" style="margin: 5px;">Deleted</a>
+        </abp-column>
+    </abp-row>
+</abp-card>

@@ -1,0 +1,25 @@
+﻿@page
+@using Todo.Localization
+@using Todo.Web.Pages.Communes
+@using Microsoft.Extensions.Localization
+@using Todo.Permissions
+@using Microsoft.AspNetCore.Authorization
+@model IndexModel
+@inject IStringLocalizer<TodoResource> L
+@inject IAuthorizationService AuthorizationService
+@section scripts
+    {
+    <abp-script src="/Pages/Communes/Index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Communes Deleted"]</abp-card-title>
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="CommunesDeletedTable"></abp-table>
+    </abp-card-body>
+</abp-card>
